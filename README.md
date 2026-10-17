@@ -1,21 +1,22 @@
 # RN 115 內外科護理學測驗
 
-115 年第一次護理師國考內外科護理學測驗，每次 10 題，限時 12 分鐘，交卷後顯示成績與錯題回顧。
+115 年第一次護理師國考內外科護理學，每次 10 題、12 分鐘、即時評分及錯題回顧。
 
-## 本機執行
+## GitHub Pages
 
-需要 Node.js >= 22.13.0。
+靜態網站已建置於 `docs/`。到 Settings → Pages，Source 選 Deploy from a branch，Branch 選 main，資料夾選 /docs，再按 Save。
+
+預期網址：https://Jessiecase.github.io/rn115-med-surg-quiz/
+
+私人儲存庫需支援私人儲存庫 Pages 的 GitHub 方案。若使用 GitHub Free，需由擁有者決定是否將儲存庫改為 Public。
+
+## 重建靜態網站
+
+Node.js >= 22.13.0。
 
 ```bash
 npm install
-npm run dev
-npm run build
+npx vite build --config pages/vite.config.ts
 ```
 
-## 程式內容
-
-- `app/page.tsx`：測驗及成績畫面。
-- `app/questions.ts`：題庫與答案。
-- `app/globals.css`：樣式。
-
-使用 React、Vinext 與 Cloudflare Workers。目前為 GitHub 原始碼版本，尚未部署成 GitHub Pages；GitHub Pages 僅支援靜態內容，需要先調整建置方式。
+將重建後的 docs 一併提交即可更新網站。
